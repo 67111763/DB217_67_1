@@ -5,38 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ทายสิคนเก่ง</title>
     <style>
-        body {
-          background-color: lightpink;          
-        }
+      body {
+        background-color: lightpink;          
+      }
 
-        div {
-          width: 960px;          
-          margin-left: auto;
-          margin-right: auto;
-        }
+      div {
+        width: 960px;          
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-        #number {
-          width: fit-content;
-          background-color: lightgreen;
-          color: red;
-          font-size: 100px;
-          font-weight: bold;
-          padding: 10px;
-          border-radius: 20px;    
-        }
+      #number {
+        width: fit-content;
+        background-color: lightgreen;
+        color: red;
+        font-size: 100px;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 20px;    
+      }
 
-        .try {
-          font-size: 1.5em;
-        }
+      .try {
+        font-size: 1.5em;
+      }
     </style>
 </head>
 <body>
+    <script>
+      let number = Math.floor(Math.random() * 100) + 1;
+      let guesses = [];
+      let answer;
+      let count = 0;
+      do {
+        answer = +prompt('เรามีตัวเลข 1-100 ลองทายซิว่าเลขอะไร');
+        guesses.push(answer);
+        count++;
+        if (answer < numbar) {
+          alert('น้อยไป');    
+        }
+        else if (answer > number) {
+          alert('มากไป');
+        }
+        else {
+          alert('ถูกต้องแล้วคร๊าบบบบ!');
+        }
+      } while(answer != number);
+    </script>
     <div>
-        <h1>เลขของเรา</h1>
-        <p id="number">PINKY</p>
-        <p class="try">คุณทายไป 0 ครั้ง</p>
-        <p class="try"></p>
-    </div>
-    
+      <h1>เลขของเรา</h1>
+      <p id="number">PINKY</p>
+      <p class="try">คุณทายไป 0 ครั้ง</p>
+      <p class="try"></p> 
+    </div>  
+    <script>
+      document.getElementById('number').innerHTML = number;
+    </script>    
 </body>
 </html>
